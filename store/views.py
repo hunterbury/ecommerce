@@ -14,6 +14,15 @@ def store(request):
     context = {'products':products, 'cartItems':cartItems}
     return render(request, 'store/store.html', context)
 
+def productInfo(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+
+    context = {'items':items, 'order':order, 'cartItems':cartItems}
+    return render(request, 'store/product.html', context)
+
 def cart(request):
     data = cartData(request)
     cartItems = data['cartItems']
@@ -30,10 +39,10 @@ def checkout(request):
     items = data['items']
 
     context = {'items':items, 'order':order, 'cartItems':cartItems}
-    return render(request, 'store/checkout.html', {})
+    return render(request, 'store/checkout.html', context)
 
 def updateItem(request):
-    data = json.loads(request.data)
+    data = json.loads(request.body)
     productId = data['productId']
     action = data['action']
 
