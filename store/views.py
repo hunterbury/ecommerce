@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.db.models import Q
 from .models import *
 import json
 import datetime
@@ -11,6 +12,11 @@ def store(request):
     cartItems = data['cartItems']
 
     products = Product.objects.all()
+    query = request.GET.get('q', None)
+    if query:
+        products = products.filter(
+            Q(name__icontains=query)
+        )
     context = {'products':products, 'cartItems':cartItems}
     return render(request, 'store/store.html', context)
 
