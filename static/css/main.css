@@ -6,6 +6,15 @@ h1,h2,h3,h4,h5,h6{
 	color:hsl(0, 0%, 30%);
 }
 
+.navbar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.submit-btn {
+	margin-right: 15px;
+}
+
 .box-element{
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;

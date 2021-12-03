@@ -5,96 +5,134 @@ from .models import *
 import json
 import datetime
 from .utils import cookieCart, cartData, guestOrder
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import ProductSerializer
 
-# Create your views here.
+@api_view(['GET'])
 def store(request):
     data = cartData(request)
     cartItems = data['cartItems']
 
     products = Product.objects.all()
+    serializer = ProductSerializer(products, many=True)
     query = request.GET.get('q', None)
     if query:
         products = products.filter(
             Q(name__icontains=query)
-        )
+    )
+
     context = {'products':products, 'cartItems':cartItems}
     return render(request, 'store/store.html', context)
 
-def productInfo(request):
+@api_view(['GET'])
+def productInfo(request, pk):
     data = cartData(request)
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
+    products = Product.objects.get(id=pk)
+    serializer = ProductSerializer(products, many=False)
 
     context = {'items':items, 'order':order, 'cartItems':cartItems}
     return render(request, 'store/product.html', context)
 
+@api_view(['GET'])
 def cart(request):
     data = cartData(request)
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
 
-    context = {'items':items, 'order':order, 'cartItems':cartItems}
-    return render(request, 'store/cart.html', context)
 
-def checkout(request):
-    data = cartData(request)
-    cartItems = data['cartItems']
-    order = data['order']
-    items = data['items']
+# def store(request):
+#     data = cartData(request)
+#     cartItems = data['cartItems']
 
-    context = {'items':items, 'order':order, 'cartItems':cartItems}
-    return render(request, 'store/checkout.html', context)
+#     products = Product.objects.all()
+#     query = request.GET.get('q', None)
+#     if query:
+#         products = products.filter(
+#             Q(name__icontains=query)
+#         )
+#     context = {'products':products, 'cartItems':cartItems}
+#     return render(request, 'store/store.html', context)
 
-def updateItem(request):
-    data = json.loads(request.body)
-    productId = data['productId']
-    action = data['action']
+# def productInfo(request):
+#     data = cartData(request)
+#     cartItems = data['cartItems']
+#     order = data['order']
+#     items = data['items']
 
-    customer = request.user.customer
-    product = Product.objects.get(id=productId)
-    order, created = Order.objects.get_or_create(customer=customer, complete=False)
+#     context = {'items':items, 'order':order, 'cartItems':cartItems}
+#     return render(request, 'store/product.html', context)
 
-    orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
-    if action == 'add':
-        orderItem.quantity = orderItem.quantity + 1
-    elif action == 'remove':
-        orderItem.quantity = orderItem.quantity - 1
+# def cart(request):
+#     data = cartData(request)
+#     cartItems = data['cartItems']
+#     order = data['order']
+#     items = data['items']
 
-    orderItem.save()
+#     context = {'items':items, 'order':order, 'cartItems':cartItems}
+#     return render(request, 'store/cart.html', context)
 
-    if orderItem.quantity <= 0:
-        orderItem.delete()
+# def checkout(request):
+#     data = cartData(request)
+#     cartItems = data['cartItems']
+#     order = data['order']
+#     items = data['items']
 
-    return JsonResponse('Item was added', safe=False)
+#     context = {'items':items, 'order':order, 'cartItems':cartItems}
+#     return render(request, 'store/checkout.html', context)
 
-def processOrder(request):
-    transaction_id = datetime.datetime.now().timestamp()
-    data = json.loads(request.body)
+# def updateItem(request):
+#     data = json.loads(request.body)
+#     productId = data['productId']
+#     action = data['action']
 
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+#     customer = request.user.customer
+#     product = Product.objects.get(id=productId)
+#     order, created = Order.objects.get_or_create(customer=customer, complete=False)
 
-    else:
-        customer, order = guestOrder(request, data)
+#     orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+#     if action == 'add':
+#         orderItem.quantity = orderItem.quantity + 1
+#     elif action == 'remove':
+#         orderItem.quantity = orderItem.quantity - 1
 
-    total = float(data['form']['total'])
-    order.transaction_id = transaction_id
+#     orderItem.save()
 
-    if total == order.get_cart_total:
-        order.complete = True
-    order.save()
+#     if orderItem.quantity <= 0:
+#         orderItem.delete()
 
-    if order.shipping == True:
-        ShippingAddress.objects.create(
-            customer = customer,
-            order = order,
-            address = data['shipping']['address'],
-            city = data['shipping']['city'],
-            state = data['shipping']['state'],
-            zipcode = data['shipping']['zipcode'],
-        )
+#     return JsonResponse('Item was added', safe=False)
 
-    return JsonResponse('Payment complete', safe=False)
+# def processOrder(request):
+#     transaction_id = datetime.datetime.now().timestamp()
+#     data = json.loads(request.body)
+
+#     if request.user.is_authenticated:
+#         customer = request.user.customer
+#         order, created = Order.objects.get_or_create(customer=customer, complete=False)
+
+#     else:
+#         customer, order = guestOrder(request, data)
+
+#     total = float(data['form']['total'])
+#     order.transaction_id = transaction_id
+
+#     if total == order.get_cart_total:
+#         order.complete = True
+#     order.save()
+
+#     if order.shipping == True:
+#         ShippingAddress.objects.create(
+#             customer = customer,
+#             order = order,
+#             address = data['shipping']['address'],
+#             city = data['shipping']['city'],
+#             state = data['shipping']['state'],
+#             zipcode = data['shipping']['zipcode'],
+#         )
+
+#     return JsonResponse('Payment complete', safe=False)

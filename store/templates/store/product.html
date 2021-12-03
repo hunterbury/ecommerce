@@ -6,7 +6,7 @@
         <div class="box-element product">
             <h6><strong>{{product.name}}</strong></h6>
             <hr>
-            <p id="description">kskjfkfklkvk vk v</p>
+            <p id="description">{{product.description}}</p>
 
             <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
             <a class="btn btn-outline-success" href="{% url 'product_info' %}">View</a>
