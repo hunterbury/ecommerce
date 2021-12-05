@@ -13,7 +13,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     digital = models.BooleanField(default=False, null=True, blank=False)
-    image = models.ImageField(null=True, blank=True)
+    image = models.FileField(null=True, blank=True)
     description = models.CharField(max_length=500, null=True, blank=True)
 
     def __str__(self):
@@ -26,6 +26,13 @@ class Product(models.Model):
         except:
             url = ''
         return url
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
+    images = models.FileField(upload_to = 'images/')
+
+    def __str__(self):
+        return self.product.name
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
