@@ -1,0 +1,287 @@
+body {
+	background-color: hsl(0, 0%, 98%);
+}
+
+h1,h2,h3,h4,h5,h6{
+	color:hsl(0, 0%, 30%);
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.submit-btn {
+	margin-right: 15px;
+}
+
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.thumbnail{
+	width: 100%;
+	height: 200px;
+	-webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+}
+
+.product{
+	border-radius: 0 0 4px 4px;
+}
+
+.bg-dark{
+	background-color: #4f868c!important;
+}
+
+#cart-icon{
+	width:25px;
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#cart-total{
+	display: block;
+	text-align: center;
+	color:#fff;
+	background-color: red;
+	width: 20px;
+	height: 25px;
+	border-radius: 50%;
+	font-size: 14px;
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+	margin-top: 10px;
+}
+
+.btn{
+	border-radius: 0;
+}
+
+.row-image{
+	width: 100px;
+}
+
+.form-field{
+	width:250px;
+	display: inline-block;
+	padding: 5px;
+}
+
+.cart-row{
+	display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+
+}
+
+.quantity{
+	display: inline-block;
+	font-weight: 700;
+	padding-right:10px;
+	
+
+}
+
+.chg-quantity{
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-quantity:hover{
+	opacity: .6;
+}
+
+
+.hidden{
+	display: none!important;
+}
+
+.gallery {
+	display: grid;
+	grid-column-gap: 8px;
+	grid-row-gap: 8px;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-auto-rows: 8px;
+}
+.gallery img {
+	max-width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 0 16px #333;
+	transition: all 1.5s ease;
+}
+.gallery img:hover {
+	box-shadow: 0 0 32px #333;
+}
+.gallery .content {
+	padding: 4px;
+}
+.gallery .gallery-item {
+	transition: grid-row-start 300ms linear;
+	transition: transform 300ms ease;
+	transition: all 0.5s ease;
+	cursor: pointer;
+}
+.gallery .gallery-item:hover {
+	transform: scale(1.025);
+}
+@media (max-width: 600px) {
+	.gallery {
+	  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	}
+}
+@media (max-width: 400px) {
+	.gallery {
+	  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+	}
+}
+
+.o-wrapper {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+
+/**
+ * Slider Product Trays
+ */
+
+.o-slider-image-viewer {
+	position: relative;
+}
+
+.o-slider-image-viewer__inner {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.o-slider-image-viewer__slide {
+	list-style: none;
+	text-align: center;
+}
+
+.o-slider-image-viewer__nav {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 12px;
+}
+
+.o-slider-image-viewer__dot {
+    background-color: #ddd;
+    border-radius: 50%;
+	cursor: pointer;
+    display: block;
+	height: 12px;
+	margin-left: 4px;
+	margin-right: 4px;
+    width: 12px;
+	
+	&:focus {
+		outline: 0;
+	}
+	
+	&.tns-nav-active {
+		background-color: #aaa;
+		cursor: default;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.o-slider-image-viewer__dot {
+    	align-items: center;
+		background-color: transparent;
+		border-radius: 0;
+		border: 1px solid transparent;
+	    display: flex;
+		height: auto;
+    	justify-content: center;
+		padding: 3px;
+		width: 48px;
+		
+		&.tns-nav-active {
+			background-color: transparent;
+			border-color: #aaa;
+		}
+	}
+}
+
+@media screen and (max-width: 899px) {
+	.o-slider-image-viewer__dot-image {
+		display: none;
+	}
+}
+
+
+
+
+
+/**
+ * Product Image Viewer
+ */
+
+.c-product-image-viewer__image {
+	max-height: calc(90vh - 96px);
+}
+
+
+
+.c-product-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -96px;
+	margin-top: 96px;
+	margin-bottom: 96px;
+}
+
+.c-product-container__element {
+	flex-basis: 100%;
+	padding-left: 96px;
+	text-align: center;
+}
+
+.c-product-container__element--details {
+	margin-top: 48px;
+}
+
+@media screen and (min-width: 900px) {
+	.c-product-container__element {
+		flex-basis: 50%;
+	}
+	
+	.c-product-container__element--images {
+		text-align: right;
+	}
+	
+	.c-product-container__element--details {
+		text-align: left;
+		margin-top: 0;
+	}
+}
+
+
+
+.c-product-name {
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+@media screen and (min-width: 900px) {
+	.c-product-name {
+		margin-bottom: 24px;
+	}
+}

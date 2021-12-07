@@ -1,9 +1,18 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
-    <div class="row">
+    <div class="gallery">
         {% for product in products %}
-        <div class="col-lg-4">
+            <div class="gallery-item">
+                <div class="content">
+                    <a href="{% url 'product-info' pk=product.id %}"><img src="{{product.image}}" alt=""></a>
+                    <h6><strong>{{product.name}}</strong></h6>
+                    <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                    <h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
+                </div>
+            </div>
+
+        {% comment %} <div class="col-lg-4">
             <img class="thumbnail" src="{{product.imageURL}}">
             <div class="box-element product">
                 <h6><strong>{{product.name}}</strong></h6>
@@ -13,7 +22,7 @@
                 <a class="btn btn-outline-success" href="{% url 'product-info' pk=product.id %}">View</a>
                 <h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
             </div>
-        </div>
+        </div> {% endcomment %}
         {% endfor %}
     </div>
 {% endblock content %}

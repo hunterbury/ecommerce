@@ -1,20 +1,44 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
-    <div class="col-lg-4">
-        <img class="thumbnail" src="{{product.imageURL}}">
-        <div class="box-element product">
-            <h6><strong>{{product.name}}</strong></h6>
-            <hr>
-            {% for photo in photos %}
-            <img class="thumbnail" src="{{photo.images.url}}">
-            {% endfor %}
+<div class="o-wrapper">
+	<div class="c-product-container">
+		<div class="c-product-container__element c-product-container__element--images">
+			<div class="c-product-image-viewer">
+				<div class="c-product-image-viewer__carousel">
+				    <div class="o-slider-image-viewer">        
+                        <ul class="o-slider-image-viewer__inner js-sliderImageViewer">
+                            <li class="o-slider-image-viewer__slide">
+                            <img class="c-product-image-viewer__image" 
+                                src="{{product.image}}">
+                            </li><!-- /o-slider-image-viewer__slide -->
+                            {% for photo in photos %}
+                            <li class="o-slider-image-viewer__slide">
+                            <img class="c-product-image-viewer__image" 
+                                src="{{photo.images}}">
+                            </li>
+                            {% endfor %}<!-- /o-slider-image-viewer__slide -->
+                        </ul><!-- /o-slider-image-viewer__inner -->
+                        <div class="o-slider-image-viewer__nav js-imageViewerNav">
+                            <span class="o-slider-image-viewer__dot">
+                                <img class="o-slider-image-viewer__dot-image" src="{{product.image}}">
+                            </span><!-- /o-slider-image-viewer__dot -->
+                            {% for photo in photos %}
+                                <span class="o-slider-image-viewer__dot">
+                                    <img class="o-slider-image-viewer__dot-image" src="{{photo.images}}">
+                                </span><!-- /o-slider-image-viewer__dot -->
+                            {% endfor %}
+                        </div><!-- /o-slider-image-view__nav -->
+				  </div><!-- /o-slider-image-viewer -->
+				</div><!-- /c-image-viewer__carousel -->
+			</div><!-- /c-image-viewer -->
+		</div><!-- /c-product-container__element -->
 
-            <p id="description">{{product.description}}</p>
-
-            <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-            <a class="btn btn-outline-success" href="{% url 'product-info' pk=product.id %}">View</a>
-            <h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
-        </div>
-     </div>
+		<div class="c-product-container__element c-product-container__element--details">
+			<h1 class="c-product-name">{{product.name}}</h1>
+			<p class="c-product-price">${{product.price|floatformat:2}}</p>
+		</div><!-- /c-product-container__element -->
+	</div><!-- /c-product-container -->
+	
+</div><!-- /o-wrapper -->
 {% endblock content %}
