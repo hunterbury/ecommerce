@@ -31,11 +31,9 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
     });
 });
 
-var slider = tns({
-	arrowKeys: true,
-	container: ".js-sliderImageViewer",
-	controls: false,
-	loop: false,
-	mouseDrag: true,
-	navContainer: ".js-imageViewerNav",
-});
+$(document).ready(function () {
+    // MDB Lightbox Init
+    $(function () {
+      $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+    });
+  });
