@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'store.apps.StoreConfig',
     'rest_framework',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

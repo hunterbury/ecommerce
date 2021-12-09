@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.db.models import Q
 from .models import *
 import json
 import datetime
 from .utils import cookieCart, cartData, guestOrder
+from .forms import NewCustomerForm
+from django.contrib.auth import login
+from django.contrib import messages
 
 
 def store(request):
@@ -101,3 +104,15 @@ def processOrder(request):
         )
 
     return JsonResponse('Payment complete', safe=False)
+
+def registerRequest(request):
+	if request.method == "POST":
+		form = NewCustomerForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect('')
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewCustomerForm()
+	return render (request=request, template_name="store/register.html", context={"register_form":form})
