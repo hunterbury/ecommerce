@@ -1,53 +1,59 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
-    <div id="mdb-lightbox-ui"></div>
+    <div id="mdb-lightbox-ui">
   
-    <div class="mdb-lightbox">
-  
-      <div class="row product-gallery">
-  
-        <div class="col-12 mb-0">
-          <figure class="view overlay rounded z-depth-1 main-img">
-            <a href="{{product.image}}"
-              data-size="710x823">
-              <img src="{{product.image}}"
-                class="img-fluid z-depth-1">
-            </a>
-          </figure>
-          {% for photo in photos %}
-          <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
-            <a href="{{photo.images}}"
-              data-size="710x823">
-              <img src="{{photo.images}}"
-                class="img-fluid z-depth-1">
-            </a>
-          </figure>
-          {% endfor %}
-        </div>
-        <div class="col-12">
-          <div class="row">
-            <div class="col-3">
-              <div class="view overlay rounded z-depth-1 gallery-item hoverable">
+        <div class="mdb-lightbox">
+    
+        <div class="row product-gallery">
+    
+            <div class="col-12 mb-0">
+            <figure class="view overlay rounded z-depth-1 main-img">
+                <a href="{{product.image}}"
+                data-size="710x823">
                 <img src="{{product.image}}"
-                  class="img-fluid">
-                <div class="mask rgba-white-slight"></div>
-              </div>
-            </div>
+                    class="img-fluid z-depth-1">
+                </a>
+            </figure>
             {% for photo in photos %}
-            <div class="col-3">
-              <div class="view overlay rounded z-depth-1 gallery-item hoverable">
+            <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
+                <a href="{{photo.images}}"
+                data-size="710x823">
                 <img src="{{photo.images}}"
-                  class="img-fluid">
-                <div class="mask rgba-white-slight"></div>
-              </div>
+                    class="img-fluid z-depth-1">
+                </a>
+            </figure>
             {% endfor %}
             </div>
+            <div class="col-12">
+            <div class="row">
+                <div class="col-3">
+                <div class="view overlay rounded z-depth-1 gallery-item hoverable">
+                    <img src="{{product.image}}"
+                    class="img-fluid">
+                    <div class="mask rgba-white-slight"></div>
+                </div>
+                </div>
+                {% for photo in photos %}
+                <div class="col-3">
+                <div class="view overlay rounded z-depth-1 gallery-item hoverable">
+                    <img src="{{photo.images}}"
+                    class="img-fluid">
+                    <div class="mask rgba-white-slight"></div>
+                </div>
+                {% endfor %}
+                </div>
+                </div>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
-  
+    
+        </div>
+    </div>
+
+    <div class="details">
+        <h2>{{product.name}}</h2>
+        <p>{{product.description}}</p>
     </div>
   
 {% endblock content %}
