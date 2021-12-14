@@ -20,7 +20,7 @@ function updateUserOrder(productId, action){
 
 		var url = '/update-item/'
 
-		await fetch(url, {
+		fetch(url, {
 			method:'POST',
 			headers:{
 				'Content-Type':'application/json',

@@ -104,15 +104,3 @@ def processOrder(request):
         )
 
     return JsonResponse('Payment complete', safe=False)
-
-def registerRequest(request):
-	if request.method == "POST":
-		form = NewCustomerForm(request.POST)
-		if form.is_valid():
-			user = form.save()
-			login(request, user)
-			messages.success(request, "Registration successful." )
-			return redirect('')
-		messages.error(request, "Unsuccessful registration. Invalid information.")
-	form = NewCustomerForm()
-	return render (request=request, template_name="store/register.html", context={"register_form":form})

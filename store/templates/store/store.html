@@ -1,6 +1,14 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
+    <div class="sort">
+        <h4>Sort By:</h4>
+        <form action=>
+            <h5>Brand:</h5>
+            <input type="checkbox" id="brand1" name="brand1" value="Hoka">
+            <h5>Type:</h5>
+        </form>
+    </div>
     <div class="gallery col-12">
         <div class="row">
             {% for product in products %}
