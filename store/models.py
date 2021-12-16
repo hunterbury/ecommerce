@@ -1,6 +1,22 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+BRAND_CHOICES = [
+    ('HOKA', 'Hoka'),
+    ('NIKE', 'Nike'),
+    ('ADIDAS', 'adidas'),
+    ('BROOKS', 'Brooks'),
+    ('ASICS', 'ASICS'),
+    ('NEW_BALANCE', 'New Balance'),
+    ('SAUCONY', 'Saucony')
+]
+
+TYPE_CHOICES = [
+    ('EVERYDAY', 'Everyday'),
+    ('LIGHTWEIGHT', 'Lightweight'),
+    ('RACING', 'Racing')
+]
+
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200, null=True)
@@ -14,27 +30,29 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     image = models.URLField(null=True, blank=True)
     description = models.CharField(max_length=500, null=True, blank=True)
+    brand = models.CharField(choices=BRAND_CHOICES, max_length=20)
+    type = models.CharField(choices=TYPE_CHOICES, max_length=20)
 
     def __str__(self):
         return self.name
 
-class Category(models.Model):
-    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200, blank=True, null=True)
-    slug = models.SlugField(blank=True, null=True)
-    parent = models.ForeignKey('self',blank=True, null=True, related_name='children', on_delete=models.SET_NULL)
+# class Category(models.Model):
+#     product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
+#     name = models.CharField(max_length=200, blank=True, null=True)
+#     slug = models.SlugField(blank=True, null=True)
+#     parent = models.ForeignKey('self',blank=True, null=True, related_name='children', on_delete=models.SET_NULL)
 
-    class Meta:
-        unique_together = ('slug', 'parent',)    
-        verbose_name_plural = "categories"     
+#     class Meta:
+#         unique_together = ('slug', 'parent',)    
+#         verbose_name_plural = "categories"     
 
-    def __str__(self):                           
-        full_path = [self.name]                  
-        k = self.parent
-        while k is not None:
-            full_path.append(k.name)
-            k = k.parent
-        return ' -> '.join(full_path[::-1])
+#     def __str__(self):                           
+#         full_path = [self.name]                  
+#         k = self.parent
+#         while k is not None:
+#             full_path.append(k.name)
+#             k = k.parent
+#         return ' -> '.join(full_path[::-1])
 
 
 class ProductImage(models.Model):
