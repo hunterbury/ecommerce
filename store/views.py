@@ -5,7 +5,7 @@ from .models import *
 import json
 import datetime
 from .utils import cookieCart, cartData, guestOrder
-from .forms import NewCustomerForm
+from .filters import ProductFilter
 from django.contrib.auth import login
 from django.contrib import messages
 
@@ -20,7 +20,21 @@ def store(request):
         products = products.filter(
             Q(name__icontains=query)
         )
-    context = {'products':products, 'cartItems':cartItems}
+    
+    filter = ProductFilter(request.GET, queryset=Product.objects.all())
+    products = filter.qs
+
+    context = {'products':products, 'cartItems':cartItems, 'filter': filter}
+    return render(request, 'store/store.html', context)
+
+def brandFilter(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
+
+    filter = BrandFilter(request.GET, queryset=Product.objects.all())
+    products = filter.qs
+
+    context = {'products':products, 'cartItems':cartItems, 'filter': filter}
     return render(request, 'store/store.html', context)
 
 def productInfo(request, pk):

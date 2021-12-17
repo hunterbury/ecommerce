@@ -3,15 +3,9 @@
 {% block content %}
     <div class="sort">
         <h4>Sort By:</h4>
-        <form action=>
-            <h5>Brand:</h5>
-            {% for brand in brands %}
-            <input type="checkbox" id="brand1" name="brand1" value="Hoka">
-            <label for="brand1">Hoka</label><br>
-            {% endfor %}
-            {% for type in types %}
-            <h5>Type:</h5>
-            {% endfor %}
+        <form action="{% url 'store' %}" method="GET">
+            {{ filter.form.as_p }}
+            <input type="submit" value="Sort" />
         </form>
     </div>
     <div class="gallery col-12">
