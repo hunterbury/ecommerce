@@ -1,6 +1,7 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
+<div class="wrapper">
     <div id="mdb-lightbox-ui">
         <div class="mdb-lightbox row product-gallery">
             <div class="col-12 mb-0">
@@ -11,7 +12,7 @@
                     class="img-fluid z-depth-1">
                 </a>
             </figure>
-            {% for photo in photos %}
+            {% comment %} {% for photo in photos %}
             <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
                 <a href="{{photo.images}}"
                 data-size="710x823">
@@ -20,7 +21,7 @@
                 </a>
             </figure>
             {% endfor %}
-            </div>
+            </div> {% endcomment %}
             <div class="col-12">
                 <div class="row">
                     <div class="col-3">
@@ -47,6 +48,26 @@
     <div class="details">
         <h2>{{product.name}}</h2>
         <p>{{product.description}}</p>
+        <label for="size">Size</label>
+        <select id="size" name="size" class="form-control">
+            <option>6</option>
+            <option>6.5</option>
+            <option>7</option>
+            <option>7.5</option>
+            <option>8</option>
+            <option>8.5</option>
+            <option>9</option>
+            <option>9.5</option>
+            <option>10</option>
+            <option>10.5</option>
+            <option>11</option>
+            <option>11.5</option>
+            <option>12</option>
+            <option>12.5</option>
+            <option>13</option>
+        </select>
+        <h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
+        <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
     </div>
-  
+</div> 
 {% endblock content %}

@@ -6,35 +6,32 @@ import json
 import datetime
 from .utils import cookieCart, cartData, guestOrder
 from .filters import ProductFilter
-from django.contrib.auth import login
 from django.contrib import messages
+from django.core.paginator import Paginator
 
-
-def store(request):
+def home(request):
     data = cartData(request)
     cartItems = data['cartItems']
 
-    products = Product.objects.all()
-    query = request.GET.get('q', None)
-    if query:
-        products = products.filter(
-            Q(name__icontains=query)
-        )
-    
     filter = ProductFilter(request.GET, queryset=Product.objects.all())
     products = filter.qs
 
     context = {'products':products, 'cartItems':cartItems, 'filter': filter}
-    return render(request, 'store/store.html', context)
+    return render(request, 'store/home.html', context)
 
-def brandFilter(request):
+def store(request):
     data = cartData(request)
     cartItems = data['cartItems']
-
-    filter = BrandFilter(request.GET, queryset=Product.objects.all())
+    
+    filter = ProductFilter(request.GET, queryset=Product.objects.all())
     products = filter.qs
 
-    context = {'products':products, 'cartItems':cartItems, 'filter': filter}
+    paginator = Paginator(products, 20)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {'products':products, 'cartItems':cartItems, 'filter': filter, 'page_obj':page_obj}
     return render(request, 'store/store.html', context)
 
 def productInfo(request, pk):
@@ -45,8 +42,9 @@ def productInfo(request, pk):
 
     product = Product.objects.get(id=pk)
     photos = ProductImage.objects.filter(product=product)
+    filter = ProductFilter(request.GET, queryset=Product.objects.all())
 
-    context = {'items':items, 'order':order, 'cartItems':cartItems, 'product':product, 'photos':photos}
+    context = {'items':items, 'order':order, 'cartItems':cartItems, 'product':product, 'photos':photos, 'filter': filter}
     return render(request, 'store/product.html', context)
 
 def cart(request):
@@ -55,7 +53,9 @@ def cart(request):
     order = data['order']
     items = data['items']
 
-    context = {'items':items, 'order':order, 'cartItems':cartItems}
+    filter = ProductFilter(request.GET, queryset=Product.objects.all())
+
+    context = {'items':items, 'order':order, 'cartItems':cartItems, 'filter': filter}
     return render(request, 'store/cart.html', context)
 
 def checkout(request):
@@ -64,7 +64,9 @@ def checkout(request):
     order = data['order']
     items = data['items']
 
-    context = {'items':items, 'order':order, 'cartItems':cartItems}
+    filter = ProductFilter(request.GET, queryset=Product.objects.all())
+
+    context = {'items':items, 'order':order, 'cartItems':cartItems, 'filter': filter}
     return render(request, 'store/checkout.html', context)
 
 def updateItem(request):

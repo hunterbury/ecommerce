@@ -1,32 +1,53 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
-    <div class="sort">
-        <h4>Sort By:</h4>
-        <form action="{% url 'store' %}" method="GET">
-            {{ filter.form.as_p }}
-            <input type="submit" value="Sort" />
-        </form>
-    </div>
-    <div class="gallery col-12">
-        <div class="row">
-            {% for product in products %}
-                <div class="col-lg-3">
-                    <div class="gallery-item">
-                        <div class="content">
-                            <a href="{% url 'product-info' pk=product.id %}"><img src="{{product.image}}" alt=""></a>
-                            <h6><strong>{{product.name}}</strong></h6>
-                            <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                            <h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
+    <div class="container">
+        <div class="sort">
+            <h4>Sort By:</h4>
+            <form action="{% url 'store' %}" method="GET">
+                {{ filter.form.brand }}
+                {{ filter.form.type }}
+                <input type="submit" value="Sort" />
+            </form>
+        </div>
+        <div class="gallery">
+            <div class="row">
+                {% for product in page_obj %}
+                    <div class="col-lg-3">
+                        <div class="gallery-item">
+                            <div class="content">
+                                <a href="{% url 'product-info' pk=product.id %}"><img src="{{product.image}}" alt=""></a>
+                                <h6><strong>{{product.name}}</strong></h6>
+                                <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                                <h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-        {% if forloop.counter|divisibleby:4 %}
+            {% if forloop.counter|divisibleby:4 %}
+            </div>
+            <div class="row">
+            {% endif %}
+                {% endfor %}
+            </div>
         </div>
-        <div class="row">
-        {% endif %}
-            {% endfor %}
-        </div>
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
     </div>
 {% endblock content %}
 
