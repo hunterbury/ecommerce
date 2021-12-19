@@ -3,8 +3,20 @@
 {% block content %}
 <div class="container">
     
-      <div class="main-picture">
+    <div class="container main-picture">
         <img src="https://s3.amazonaws.com/nikeinc/assets/39293/Nike_Free_2015_athletes1_hd_1600.jpg?1426799395" width="1200" height="500">
-      </div>
+        <a href="{% url 'store' %}?brand=NIKE&type=" class="btn btn-secondary">Shop Nike</a>
+    </div> <br>
+
+    <ul>
+        <li><a href="{% url 'store' %}?brand=ADIDAS&type=">adidas</a></li>
+        <li><a href="{% url 'store' %}?brand=ASICS&type=">ASICS</a></li>
+        <li><a href="{% url 'store' %}?brand=BROOKS&type=">Brooks</a></li>
+        <li><a href="{% url 'store' %}?brand=HOKA&type=">Hoka</a></li>
+        <li><a href="{% url 'store' %}?brand=NEW_BALANCE&type=">New Balance</a></li>
+        <li><a href="{% url 'store' %}?brand=NIKE&type=">Nike</a></li>
+        <li><a href="{% url 'store' %}?brand=SAUCONY&type=">Saucony</a></li>
+        <li><a href="{% url 'store' %}">View all brands</a></li>
+    </ul>
 
 {% endblock content %}

@@ -2,12 +2,16 @@
 {% load static %}
 {% block content %}
     <div class="container">
-        <div class="sort">
+        <div class="form-wrapper">
             <h4>Sort By:</h4>
             <form action="{% url 'store' %}" method="GET">
+                <h5>Brand:</h5>
+                <div class="form-group">
                 {{ filter.form.brand }}
+                </div>
+                <h5>Type:</h5>
                 {{ filter.form.type }}
-                <input type="submit" value="Sort" />
+                <input class="btn btn-primary" type="submit" value="Sort" />
             </form>
         </div>
         <div class="gallery">
