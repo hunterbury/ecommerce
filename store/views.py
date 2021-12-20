@@ -26,7 +26,7 @@ def store(request):
     filter = ProductFilter(request.GET, queryset=Product.objects.all())
     products = filter.qs
 
-    paginator = Paginator(products, 20)
+    paginator = Paginator(products, 15)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

@@ -2,74 +2,75 @@
 {% load static %}
 {% block content %}
     <div class="pd-wrap">
-		<div class="product-container">
+		<div class="product-container col-12">
 	        <div class="heading-section">
 	            <h2>Product Details</h2>
 	        </div>
-	        <div class="row">
-				<div id="content-wrapper">
-					<div class="column">
-						<img id="featured" src="{{product.image}}">
-						<div id="slide-wrapper">
-							<img id="slideLeft" class="arrow" src="{% static 'images/icons8-chevron-left-30.png' %}">
-			
-							<div id="slider">
-								<img class="thumbnail" src="{{product.image}}">
-								{% for photo in photos %}
-								<img class="thumbnail" src="{{photo.images}}">
-								{% endfor %}
+			<div id="content-wrapper" class="col-12 col-md-6">
+				<div class="col-md-6">
+					<div class="detail-gallery cf">
+						<div class="row">
+							<div>
+								<img src="{{product.image}}" style="width: 20em; height: 20em;" />
 							</div>
-							<img id="slideRight" class="arrow" src="{% static 'images/icons8-chevron-right-30.png' %}">
+							{% for photo in photos %}
+							<div>
+								<img src="{{photo.images}}" style="width: 20em; height: 20em;" />
+							</div>
+							{% if forloop.counter == 1 %}
+						</div>
+						<div class="row">
+							{% endif %}
+							{% endfor %}
 						</div>
 					</div>
-	        	<div class="col-md-6">
-	        		<div class="product-dtl">
-        				<div class="product-info">
-		        			<div class="product-name">{{product.name}}</div>
-		        			<div class="reviews-counter">
-								<div class="rate">
-								    <input type="radio" id="star5" name="rate" value="5" checked />
-								    <label for="star5" title="text">5 stars</label>
-								    <input type="radio" id="star4" name="rate" value="4" checked />
-								    <label for="star4" title="text">4 stars</label>
-								    <input type="radio" id="star3" name="rate" value="3" checked />
-								    <label for="star3" title="text">3 stars</label>
-								    <input type="radio" id="star2" name="rate" value="2" />
-								    <label for="star2" title="text">2 stars</label>
-								    <input type="radio" id="star1" name="rate" value="1" />
-								    <label for="star1" title="text">1 star</label>
-								  </div>
-								<span>3 Reviews</span>
-							</div>
-		        			<div class="product-price"><span>${{product.price|floatformat:2}}</span></div>
-		        		</div>
-	        			<p>{{product.description}}</p>
-	        			<div class="row">
-	        				<div class="col-md-6">
-	        					<label for="size">Size</label>
-								<select id="size" name="size" class="form-control">
-                                    <option>6</option>
-                                    <option>6.5</option>
-                                    <option>7</option>
-                                    <option>7.5</option>
-                                    <option>8</option>
-                                    <option>8.5</option>
-                                    <option>9</option>
-                                    <option>9.5</option>
-                                    <option>10</option>
-                                    <option>10.5</option>
-                                    <option>11</option>
-                                    <option>11.5</option>
-                                    <option>12</option>
-                                    <option>12.5</option>
-                                    <option>13</option>                        
-                                </select>
-	        				</div>
-                            <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-	        			</div>
-	        		</div>
-	        	</div>
-	        </div>
+				</div>
+				<div class="product-dtl col-6">
+					<div class="product-info">
+						<div class="product-name">{{product.name}}</div>
+						<div class="reviews-counter">
+							<div class="rate">
+								<input type="radio" id="star5" name="rate" value="5" checked />
+								<label for="star5" title="text">5 stars</label>
+								<input type="radio" id="star4" name="rate" value="4" checked />
+								<label for="star4" title="text">4 stars</label>
+								<input type="radio" id="star3" name="rate" value="3" checked />
+								<label for="star3" title="text">3 stars</label>
+								<input type="radio" id="star2" name="rate" value="2" />
+								<label for="star2" title="text">2 stars</label>
+								<input type="radio" id="star1" name="rate" value="1" />
+								<label for="star1" title="text">1 star</label>
+								</div>
+							<span>3 Reviews</span>
+						</div>
+						<div class="product-price"><span>${{product.price|floatformat:2}}</span></div>
+					</div>
+					<p>{{product.description}}</p>
+					<div class="row">
+						<div class="col-md-6">
+							<label for="size">Size</label>
+							<select id="size" name="size" class="form-control">
+								<option>6</option>
+								<option>6.5</option>
+								<option>7</option>
+								<option>7.5</option>
+								<option>8</option>
+								<option>8.5</option>
+								<option>9</option>
+								<option>9.5</option>
+								<option>10</option>
+								<option>10.5</option>
+								<option>11</option>
+								<option>11.5</option>
+								<option>12</option>
+								<option>12.5</option>
+								<option>13</option>                        
+							</select>
+						</div>
+						<button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+					</div>
+				</div>
+			</div>
 	        <div class="product-info-tabs">
 		        <ul class="nav nav-tabs" id="myTab" role="tablist">
 				  	<li class="nav-item">
