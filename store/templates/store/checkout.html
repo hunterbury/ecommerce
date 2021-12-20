@@ -1,6 +1,7 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
+<div class="checkout">
     <div class="row">
         <div class="col-lg-6">
             <div class="box-element" id="form-wrapper">
@@ -40,7 +41,6 @@
 
             <br>
             <div class="box-element" id="payment-info">
-                <small>Paypal Options</small>
                 <div id="paypal-button-container"></div>
                 
             </div>
@@ -65,6 +65,7 @@
             </div>
         </div>
     </div>
+</div>
     <script src="https://www.paypal.com/sdk/js?client-id=AcvqBG4nYrKlpGUFT_k6VdmxSktU3DLJzhz77UXdA2vnA8n2UOfadF1o57Q-rq5mMiUm-mkdT_WNM5dd&currency=USD&disable-funding=paylater"></script>
 
     <script>

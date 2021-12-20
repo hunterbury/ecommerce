@@ -14,7 +14,8 @@ BRAND_CHOICES = [
 TYPE_CHOICES = [
     ('EVERYDAY', 'Everyday'),
     ('LIGHTWEIGHT', 'Lightweight'),
-    ('RACING', 'Racing')
+    ('RACING', 'Racing'),
+    ('TRAIL', 'Trail')
 ]
 
 class Customer(models.Model):
