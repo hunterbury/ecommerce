@@ -187,26 +187,27 @@ nav {
 }
 
 .home-container {
-	display: grid;
+	display: flex;
+	flex-wrap: wrap;
 	height: 100%;
 	width: 100%;
-	grid-template-columns: 1fr 3fr 3fr;
 	margin: 0;
 	padding: 10px;
 }
 
 .sections {
-	justify-content: space-between;
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 0 50%;
 
 	.deal {
-		width: 100%;
+		flex: 50%;
 		
 		img {
 			width: 100%;
 		}
 
 		.youtube {
-			grid-column: span 2;
 
 			.iframe {
 				width: 100%;
@@ -222,6 +223,7 @@ nav {
 	grid-template-columns: .33fr 3.5fr;
 	margin-right: 0px;
 	margin-top: 20px;
+	max-width: none;
 }
 
 .sort {
@@ -234,7 +236,7 @@ nav {
 }
 
 .gallery {
-	display: grid;
+	display: flex;
 	width: 100%;
 	grid-column-gap: 8px;
 	grid-row-gap: 8px;

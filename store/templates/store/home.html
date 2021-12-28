@@ -1,54 +1,7 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
-    <div class="banner">
-        <ul>
-            <li class="dropdown"><a href="{% url 'store' %}" class="dropbtn btn btn-secondary">Men's</a>
-                <div class="dropdown-content">
-                    <ul class="">
-                        <p>Brands:</p>
-                        <li><a href="{% url 'store' %}?brand=ADIDAS&type=">adidas</a></li>
-                        <li><a href="{% url 'store' %}?brand=ASICS&type=">ASICS</a></li>
-                        <li><a href="{% url 'store' %}?brand=BROOKS&type=">Brooks</a></li>
-                        <li><a href="{% url 'store' %}?brand=HOKA&type=">Hoka</a></li>
-                        <li><a href="{% url 'store' %}?brand=NEW_BALANCE&type=">New Balance</a></li>
-                        <li><a href="{% url 'store' %}?brand=NIKE&type=">Nike</a></li>
-                        <li><a href="{% url 'store' %}?brand=SAUCONY&type=">Saucony</a></li>
-                        <li><a href="{% url 'store' %}">View all brands</a></li>
-                    </ul>
-                    <ul>
-                        <p>Types:</p>
-                        <li><a href="{% url 'store' %}?brand=&type=EVERYDAY">Everyday</a></li>
-                        <li><a href="{% url 'store' %}?brand=&type=LIGHTWEIGHT">Lightweight</a></li>
-                        <li><a href="{% url 'store' %}?brand=&type=RACING">Racing</a></li>
-                        <li><a href="{% url 'store' %}">View all types</a></li>
-                    </ul>
-                </div>
-            </li>   
-            <li class="dropdown"><a href="{% url 'store' %}" class="dropbtn btn btn-secondary">Women's</a>
-                <div class="dropdown-content">
-                    <ul class="">
-                        <p>Brands:</p>
-                        <li><a href="{% url 'store' %}?brand=ADIDAS&type=">adidas</a></li>
-                        <li><a href="{% url 'store' %}?brand=ASICS&type=">ASICS</a></li>
-                        <li><a href="{% url 'store' %}?brand=BROOKS&type=">Brooks</a></li>
-                        <li><a href="{% url 'store' %}?brand=HOKA&type=">Hoka</a></li>
-                        <li><a href="{% url 'store' %}?brand=NEW_BALANCE&type=">New Balance</a></li>
-                        <li><a href="{% url 'store' %}?brand=NIKE&type=">Nike</a></li>
-                        <li><a href="{% url 'store' %}?brand=SAUCONY&type=">Saucony</a></li>
-                        <li><a href="{% url 'store' %}">View all brands</a></li>
-                    </ul>
-                    <ul>
-                        <p>Types:</p>
-                        <li><a href="{% url 'store' %}?brand=&type=EVERYDAY">Everyday</a></li>
-                        <li><a href="{% url 'store' %}?brand=&type=LIGHTWEIGHT">Lightweight</a></li>
-                        <li><a href="{% url 'store' %}?brand=&type=RACING">Racing</a></li>
-                        <li><a href="{% url 'store' %}">View all types</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </div>
+
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -93,11 +46,11 @@
         <div class="sections col-12">
             <div class="deal col-lg-12">
                 <h5>adidas Ultraboost 21 20% off</h5>
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/h22732-ub21-innovation-ss21-hero-outfit-one-female-pre-run-fy0401-246-688585-1610641223.jpg">
+                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/h22732-ub21-innovation-ss21-hero-outfit-one-female-pre-run-fy0401-246-688585-1610641223.jpg" style="width: 20em; height: 20em;">
             </div>
             <div class="deal col-lg-12">
                 <h5>New Hoka Rincon 3</h5>
-                <img src="https://www.believeintherun.com/wp-content/uploads/2021/07/hoka-one-one-rincon-3-lateral.jpg">
+                <img src="https://www.believeintherun.com/wp-content/uploads/2021/07/hoka-one-one-rincon-3-lateral.jpg" style="width: 20em; height: 20em;">
             </div>
 
             <div class="row">

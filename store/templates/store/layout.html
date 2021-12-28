@@ -23,6 +23,51 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
+
+            <li class="dropdown"><a href="{% url 'store' %}" class="dropbtn btn btn-secondary">Men's</a>
+                <div class="dropdown-content">
+                    <ul class="">
+                        <p>Brands:</p>
+                        <li><a href="{% url 'store' %}?brand=ADIDAS&type=">adidas</a></li>
+                        <li><a href="{% url 'store' %}?brand=ASICS&type=">ASICS</a></li>
+                        <li><a href="{% url 'store' %}?brand=BROOKS&type=">Brooks</a></li>
+                        <li><a href="{% url 'store' %}?brand=HOKA&type=">Hoka</a></li>
+                        <li><a href="{% url 'store' %}?brand=NEW_BALANCE&type=">New Balance</a></li>
+                        <li><a href="{% url 'store' %}?brand=NIKE&type=">Nike</a></li>
+                        <li><a href="{% url 'store' %}?brand=SAUCONY&type=">Saucony</a></li>
+                        <li><a href="{% url 'store' %}">View all brands</a></li>
+                    </ul>
+                    <ul>
+                        <p>Types:</p>
+                        <li><a href="{% url 'store' %}?brand=&type=EVERYDAY">Everyday</a></li>
+                        <li><a href="{% url 'store' %}?brand=&type=LIGHTWEIGHT">Lightweight</a></li>
+                        <li><a href="{% url 'store' %}?brand=&type=RACING">Racing</a></li>
+                        <li><a href="{% url 'store' %}">View all types</a></li>
+                    </ul>
+                </div>
+            </li>   
+            <li class="dropdown"><a href="{% url 'store' %}" class="dropbtn btn btn-secondary">Women's</a>
+                <div class="dropdown-content">
+                    <ul class="">
+                        <p>Brands:</p>
+                        <li><a href="{% url 'store' %}?brand=ADIDAS&type=">adidas</a></li>
+                        <li><a href="{% url 'store' %}?brand=ASICS&type=">ASICS</a></li>
+                        <li><a href="{% url 'store' %}?brand=BROOKS&type=">Brooks</a></li>
+                        <li><a href="{% url 'store' %}?brand=HOKA&type=">Hoka</a></li>
+                        <li><a href="{% url 'store' %}?brand=NEW_BALANCE&type=">New Balance</a></li>
+                        <li><a href="{% url 'store' %}?brand=NIKE&type=">Nike</a></li>
+                        <li><a href="{% url 'store' %}?brand=SAUCONY&type=">Saucony</a></li>
+                        <li><a href="{% url 'store' %}">View all brands</a></li>
+                    </ul>
+                    <ul>
+                        <p>Types:</p>
+                        <li><a href="{% url 'store' %}?brand=&type=EVERYDAY">Everyday</a></li>
+                        <li><a href="{% url 'store' %}?brand=&type=LIGHTWEIGHT">Lightweight</a></li>
+                        <li><a href="{% url 'store' %}?brand=&type=RACING">Racing</a></li>
+                        <li><a href="{% url 'store' %}">View all types</a></li>
+                    </ul>
+                </div>
+            </li>
           
             <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
                 <div class="form-inline my-2 my-lg-0 ml-auto">
