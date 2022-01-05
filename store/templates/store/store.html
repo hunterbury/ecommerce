@@ -17,7 +17,7 @@
         <div class="gallery">
             <div class="row">
                 {% for product in page_obj %}
-                    <div class="col-lg-4">
+                    <div class="col-4">
                         <div class="gallery-item">
                             <div class="content">
                                 <a href="{% url 'product-info' pk=product.id %}"><img src="{{product.image}}" alt=""></a>
