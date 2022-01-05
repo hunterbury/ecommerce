@@ -4,9 +4,10 @@
 }
 
 body {
-	background: #ECE9E6;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	// background: #ECE9E6;  /* fallback for old browsers */
+	// background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+	// background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #fff;
 	overflow-x:hidden;
 }
 
@@ -16,7 +17,7 @@ h1,h2,h3,h4,h5,h6{
 
 nav {
 	display: flex;
-	background: #0F1026;
+	
 }
 
 .submit-btn {
@@ -226,6 +227,7 @@ nav {
 	margin-right: 0px;
 	margin-top: 20px;
 	max-width: none;
+	padding-left: 15px;
 }
 
 .sort {
@@ -243,7 +245,7 @@ nav {
 }
 
 .form-wrapper {
-	display: inline;
+	display: inline-block;
 	padding-left: 10px;
 }
 
