@@ -1,7 +1,7 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
-    <div class="gallery-container">
+    {% comment %} <div class="gallery-container">
         <div class="form-wrapper">
             <h4>Sort By:</h4>
             <form action="{% url 'store' %}" method="GET">
@@ -28,14 +28,42 @@
                             </div>
                         </div>
                     </div>
-            {% comment %} {% if forloop.counter|divisibleby:4 %}
-            </div>
-            <div class="row">
-            {% endif %} {% endcomment %}
                 {% endfor %}
             </div>
         </div>
     </div>
+ {% endcomment %}
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for product in page_obj %}
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <a href="{% url 'product-info' pk=product.id %}"><img class="card-img-top" src="{{product.image}}" alt="..." /></a>
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">{{product.name}}</h5>
+                                <!-- Product price-->
+                                ${{product.price|floatformat:2}}
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button data-product={{product.id}} data-action="add" class="btn btn-outline-dark flex-shrink-0 add-btn update-cart" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
@@ -55,22 +83,5 @@
         </ul>
     </nav>
 
-    {% comment %} <div class="pagination">
-        <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
-    
-            <span class="current page-item disabled">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-            </span>
-    
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
-        </span>
-    </div> {% endcomment %}
 {% endblock content %}
 
