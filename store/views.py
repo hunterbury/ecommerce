@@ -43,8 +43,9 @@ def productInfo(request, pk):
     product = Product.objects.get(id=pk)
     photos = ProductImage.objects.filter(product=product)
     filter = ProductFilter(request.GET, queryset=Product.objects.all())
+    products = Product.objects.all()
 
-    context = {'items':items, 'order':order, 'cartItems':cartItems, 'product':product, 'photos':photos, 'filter': filter}
+    context = {'items':items, 'order':order, 'cartItems':cartItems, 'product':product, 'photos':photos, 'filter': filter, 'products': products}
     return render(request, 'store/product.html', context)
 
 def cart(request):
