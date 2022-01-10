@@ -21,133 +21,26 @@
 		</div>
 	</div>
 </section>
-<!-- Related items section-->
 <section class="py-5 bg-light">
 	<div class="container px-4 px-lg-5 mt-5">
 		<h2 class="fw-bolder mb-4">Related products</h2>
 		<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-			{% for product in products %}
-				{% if product.id is 5%}
+			{% for product in products|slice:":5" %}
 				<div class="col mb-5">
 					<div class="card h-100">
-						<!-- Product image-->
-						<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-						<!-- Product details-->
+						<img class="card-img-top" src="{{product.image}}" alt="..." />
 						<div class="card-body p-4">
 							<div class="text-center">
-								<!-- Product name-->
 								<h5 class="fw-bolder">{{product.name}}</h5>
-								<!-- Product price-->
-								$40.00 - $80.00
+								{{product.price}}
 							</div>
 						</div>
-						<!-- Product actions-->
 						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-							<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View</a></div>
+							<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{% url 'product-info' pk=product.id %}">View</a></div>
 						</div>
 					</div>
 				</div>
-	
-				{% endif %}
 			{% endfor %}
-			<div class="col mb-5">
-				<div class="card h-100">
-					<!-- Product image-->
-					<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-					<!-- Product details-->
-					<div class="card-body p-4">
-						<div class="text-center">
-							<!-- Product name-->
-							<h5 class="fw-bolder">Fancy Product</h5>
-							<!-- Product price-->
-							$40.00 - $80.00
-						</div>
-					</div>
-					<!-- Product actions-->
-					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="col mb-5">
-				<div class="card h-100">
-					<!-- Sale badge-->
-					<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-					<!-- Product image-->
-					<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-					<!-- Product details-->
-					<div class="card-body p-4">
-						<div class="text-center">
-							<!-- Product name-->
-							<h5 class="fw-bolder">{{product.name}}</h5>
-							<!-- Product reviews-->
-							<div class="d-flex justify-content-center small text-warning mb-2">
-								<div class="bi-star-fill"></div>
-								<div class="bi-star-fill"></div>
-								<div class="bi-star-fill"></div>
-								<div class="bi-star-fill"></div>
-								<div class="bi-star-fill"></div>
-							</div>
-							<!-- Product price-->
-							<span class="text-muted text-decoration-line-through">$20.00</span>
-							$18.00
-						</div>
-					</div>
-					<!-- Product actions-->
-					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="col mb-5">
-				<div class="card h-100">
-					<!-- Sale badge-->
-					<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-					<!-- Product image-->
-					<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-					<!-- Product details-->
-					<div class="card-body p-4">
-						<div class="text-center">
-							<!-- Product name-->
-							<h5 class="fw-bolder">Sale Item</h5>
-							<!-- Product price-->
-							<span class="text-muted text-decoration-line-through">$50.00</span>
-							$25.00
-						</div>
-					</div>
-					<!-- Product actions-->
-					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="col mb-5">
-				<div class="card h-100">
-					<!-- Product image-->
-					<img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-					<!-- Product details-->
-					<div class="card-body p-4">
-						<div class="text-center">
-							<!-- Product name-->
-							<h5 class="fw-bolder">Popular Item</h5>
-							<!-- Product reviews-->
-							<div class="d-flex justify-content-center small text-warning mb-2">
-								<div class="bi-star-fill"></div>
-								<div class="bi-star-fill"></div>
-								<div class="bi-star-fill"></div>
-								<div class="bi-star-fill"></div>
-								<div class="bi-star-fill"></div>
-							</div>
-							<!-- Product price-->
-							$40.00
-						</div>
-					</div>
-					<!-- Product actions-->
-					<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-						<div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
@@ -207,133 +100,4 @@
 		  </div>
 	</div>
 </div>
-
-    {% comment %} <div class="pd-wrap">
-		<div class="product-container col-12">
-	        <div class="heading-section">
-	            <h2>Product Details</h2>
-	        </div>
-			<div id="content-wrapper" class="col-12">
-				<div class="col-md-6">
-					<div class="detail-gallery cf">
-						<div class="row">
-							<div>
-								<img src="{{product.image}}" style="width: 20em; height: 20em;" />
-							</div>
-							{% for photo in photos %}
-							<div>
-								<img src="{{photo.images}}" style="width: 20em; height: 20em;" />
-							</div>
-							{% if forloop.counter == 1 %}
-						</div>
-						<div class="row">
-							{% endif %}
-							{% endfor %}
-						</div>
-					</div>
-				</div>
-				<div class="product-dtl col-6">
-					<div class="product-info">
-						<div class="product-name">{{product.name}}</div>
-						<div class="reviews-counter">
-							<div class="rate">
-								<input type="radio" id="star5" name="rate" value="5" checked />
-								<label for="star5" title="text">5 stars</label>
-								<input type="radio" id="star4" name="rate" value="4" checked />
-								<label for="star4" title="text">4 stars</label>
-								<input type="radio" id="star3" name="rate" value="3" checked />
-								<label for="star3" title="text">3 stars</label>
-								<input type="radio" id="star2" name="rate" value="2" />
-								<label for="star2" title="text">2 stars</label>
-								<input type="radio" id="star1" name="rate" value="1" />
-								<label for="star1" title="text">1 star</label>
-								</div>
-							<span>3 Reviews</span>
-						</div>
-						<div class="product-price"><span>${{product.price|floatformat:2}}</span></div>
-					</div>
-					<p>{{product.description}}</p>
-					<div class="row">
-						<div class="col-md-6">
-							<label for="size">Size</label>
-							<select id="size" name="size" class="form-control">
-								<option>6</option>
-								<option>6.5</option>
-								<option>7</option>
-								<option>7.5</option>
-								<option>8</option>
-								<option>8.5</option>
-								<option>9</option>
-								<option>9.5</option>
-								<option>10</option>
-								<option>10.5</option>
-								<option>11</option>
-								<option>11.5</option>
-								<option>12</option>
-								<option>12.5</option>
-								<option>13</option>                        
-							</select>
-						</div>
-						<button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-					</div>
-				</div>
-			</div>
-	        <div class="product-info-tabs">
-		        <ul class="nav nav-tabs" id="myTab" role="tablist">
-				  	<li class="nav-item">
-				    	<a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
-				  	</li>
-				  	<li class="nav-item">
-				    	<a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
-				  	</li>
-				</ul>
-				<div class="tab-content" id="myTabContent">
-				  	<div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                        {{product.description}}
-                    </div>
-				  	<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-				  		<div class="review-heading">REVIEWS</div>
-				  		<p class="mb-20">There are no reviews yet.</p>
-				  		<form class="review-form">
-		        			<div class="form-group">
-			        			<label>Your rating</label>
-			        			<div class="reviews-counter">
-									<div class="rate">
-									    <input type="radio" id="star5" name="rate" value="5" />
-									    <label for="star5" title="text">5 stars</label>
-									    <input type="radio" id="star4" name="rate" value="4" />
-									    <label for="star4" title="text">4 stars</label>
-									    <input type="radio" id="star3" name="rate" value="3" />
-									    <label for="star3" title="text">3 stars</label>
-									    <input type="radio" id="star2" name="rate" value="2" />
-									    <label for="star2" title="text">2 stars</label>
-									    <input type="radio" id="star1" name="rate" value="1" />
-									    <label for="star1" title="text">1 star</label>
-									</div>
-								</div>
-							</div>
-		        			<div class="form-group">
-			        			<label>Your message</label>
-			        			<textarea class="form-control" rows="10"></textarea>
-			        		</div>
-			        		<div class="row">
-				        		<div class="col-md-6">
-				        			<div class="form-group">
-					        			<input type="text" name="" class="form-control" placeholder="Name*">
-					        		</div>
-					        	</div>
-				        		<div class="col-md-6">
-				        			<div class="form-group">
-					        			<input type="text" name="" class="form-control" placeholder="Email Id*">
-					        		</div>
-					        	</div>
-					        </div>
-					        <button class="round-black-btn">Submit Review</button>
-			        	</form>
-				  	</div>
-				</div>
-			</div>
-			
-		</div>
-	</div> {% endcomment %}
 {% endblock content %}

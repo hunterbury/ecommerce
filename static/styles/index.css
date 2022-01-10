@@ -4,12 +4,6 @@
 }
 
 body {
-  background: #ECE9E6;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#ECE9E6));
-  background: linear-gradient(to bottom, #FFFFFF, #ECE9E6);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: #fff;
   overflow-x: hidden;
 }
@@ -211,37 +205,37 @@ nav {
   padding: 10px;
 }
 
-.sections {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
+.deals img {
+  border-radius: 10%;
 }
 
-.sections .deal {
-  -webkit-box-flex: 50%;
-      -ms-flex: 50%;
-          flex: 50%;
+.brands {
+  max-width: 68.75rem;
+  margin: auto;
+  text-align: center;
+  margin-top: 2.5rem;
 }
 
-.sections .deal img {
-  width: 100%;
+.brands-header {
+  margin-bottom: 1rem;
 }
 
-.sections .deal .youtube {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
+.brands-wrapper img {
+  padding: 1.25rem;
 }
 
-.sections .deal .youtube .iframe {
-  width: 100%;
+.icon-card {
+  background-color: #fff;
+  border-radius: 11px;
+  -webkit-box-shadow: 0 3px 10px var(--secondary-shadow);
+          box-shadow: 0 3px 10px var(--secondary-shadow);
+  padding: 20px;
+  margin: 10px;
+}
+
+.icon {
+  width: 11.875rem;
+  height: 11.25rem;
 }
 
 .gallery-container {

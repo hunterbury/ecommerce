@@ -4,9 +4,9 @@
 }
 
 body {
-	background: #ECE9E6;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	// background: #ECE9E6;  /* fallback for old browsers */
+	// background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+	// background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background: #fff;
 	overflow-x:hidden;
 }
@@ -196,29 +196,37 @@ nav {
 	padding: 10px;
 }
 
-.sections {
-	display: flex;
-	flex-wrap: wrap;
-	flex: 1 0 50%;
-
-	.deal {
-		flex: 50%;
-		
-		img {
-			width: 100%;
-		}
-
-		.youtube {
-			align-self: center;
-			justify-self: center;
-
-			.iframe {
-				width: 100%;
-			}
-		}
-	}
+.deals img {
+	border-radius: 10%;
 }
 
+.brands {
+    max-width: 68.75rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+  
+.brands-header {
+    margin-bottom: 1rem;
+}
+  
+.brands-wrapper img {
+    padding: 1.25rem;
+}
+
+.icon-card {
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px var(--secondary-shadow);
+    padding: 20px;
+    margin: 10px;
+}
+
+.icon {
+    width: 11.875rem;
+    height: 11.25rem;
+}
 
 .gallery-container {
 	display: grid;
