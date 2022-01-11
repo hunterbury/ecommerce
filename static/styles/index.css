@@ -178,8 +178,8 @@ nav {
 
 .carousel-item a {
   position: absolute;
-  bottom: 4em;
-  right: 4em;
+  bottom: 0em;
+  right: 0em;
 }
 
 .carousel-item img {

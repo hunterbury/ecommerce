@@ -8,6 +8,8 @@
                 <form id="form">
                     {% csrf_token %}
                     <div id="user-info">
+                        <p>Personal Information:</p>
+                        <hr>
                         <div class="form-field">
                             <input required class="form-control" type="text" name="name" placeholder="Name..">
                         </div>
@@ -35,7 +37,7 @@
                     </div>
                     
                     <hr>
-                    <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+                    <input id="form-button" class="btn btn-outline-dark mt-auto btn-block" type="submit" value="Checkout">
                 </form>
             </div>
 

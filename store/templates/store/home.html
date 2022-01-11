@@ -1,12 +1,24 @@
 {% extends 'store/layout.html' %}
 {% load static %}
 {% block content %}
-
-<header class="bg-dark py-5">
-    <div class="container px-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-6">
-                <div class="text-center my-5">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img class="d-block w-100" src="https://s3.amazonaws.com/nikeinc/assets/39293/Nike_Free_2015_athletes1_hd_1600.jpg?1426799395" alt="First slide">
+        <a href="{% url 'store' %}?brand=NIKE&type=" class="btn btn-outline-light btn-lg px-4 bg-dark">Shop Nike</a>
+        </div>
+        <div class="carousel-item">
+        <img class="d-block w-100" src="https://cdn.shopify.com/s/files/1/0097/6384/8258/files/4_f0b75b69-9fff-42d1-bebe-087058b7c4d5_2048x2048.jpg?v=1607009963" alt="Second slide">
+        <a href="{% url 'store' %}?brand=SAUCONY&type=" class="btn btn-outline-light btn-lg px-4 bg-dark">Shop Saucony</a>
+        </div>
+        <div class="carousel-item">
+        <img class="d-block w-100" src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/05/987525-The-8-Best-Hoka-Shoes-for-Runners-1296x728-Header-e0edef.jpg?w=1155&h=1528" alt="Third slide">
+        <a href="{% url 'store' %}?brand=HOKA&type=" class="btn btn-outline-light btn-lg px-4 bg-dark">Shop Hoka</a>
+        </div>
+    </div>
+    </div>
+</div>
+                {% comment %} <div class="text-center my-5">
                     <h1 class="display-5 fw-bolder text-white mb-2">Present your business in a whole new way</h1>
                     <p class="lead text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
@@ -14,10 +26,7 @@
                         <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</header>
+            </div> {% endcomment %}
 <!-- Features section-->
 {% comment %} <section class="py-5 border-bottom" id="features">
     <div class="container px-5 my-5">
@@ -65,71 +74,45 @@
             </div>
             <div class="deal col-4">
                 <h5>Hoka Rincon 3</h5>
-                <img src="https://www.believeintherun.com/wp-content/uploads/2021/07/hoka-one-one-rincon-3-lateral.jpg" style="width: 20em; height: 20em; border-radius: 2%;">
+                <a href="{% url 'product-info' pk=1 %}"><img src="https://www.believeintherun.com/wp-content/uploads/2021/07/hoka-one-one-rincon-3-lateral.jpg" style="width: 20em; height: 20em; border-radius: 2%;"></a>
             </div>    
             <div class="deal col-4">
                 <h5>Nike Vaporfly NEXT% 2</h5>
-                <img src="https://cdn.runningshoesguru.com/wp-content/uploads/2021/04/Brooks-Glycerin-GTS-19-Pair.jpg" style="width: 20em; height: 20em; border-radius: 2%;">
+                <a href="{% url 'product-info' pk=14 %}"><img src="https://sneakernews.com/wp-content/uploads/2021/05/Nike-ZoomX-Vaporfly-NEXT-2-CU4111-700-6.jpg" style="width: 20em; height: 20em; border-radius: 2%;"></a>
             </div>
         </div>
         <div class="row gx-5 justify-content-center">
-            <div class="deal col-4">
-                <h5>adidas Ultraboost 21</h5>
-                <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/h22732-ub21-innovation-ss21-hero-outfit-one-female-pre-run-fy0401-246-688585-1610641223.jpg" style="width: 20em; height: 20em; border-radius: 2%;">
+            <div class="deal col-12">
+                <h5>Hoka Mach 4</h5>
+                <a href="{% url 'product-info' pk=32 %}"><img src="https://www.roadrunnersports.com/blog/wp-content/uploads/2021/04/HOKA-ONE-ONE-Mach-4-Review.jpeg" style="width: 65em; height: 30em; border-radius: 2%;"></a>
             </div>
-            <div class="deal col-4">
+            {% comment %} <div class="deal col-4">
                 <h5>Hoka Rincon 3</h5>
                 <img src="https://www.believeintherun.com/wp-content/uploads/2021/07/hoka-one-one-rincon-3-lateral.jpg" style="width: 20em; height: 20em; border-radius: 2%;">
             </div>    
             <div class="deal col-4">
                 <h5>Nike Vaporfly NEXT% 2</h5>
                 <img src="https://cdn.runningshoesguru.com/wp-content/uploads/2021/04/Brooks-Glycerin-GTS-19-Pair.jpg" style="width: 20em; height: 20em; border-radius: 2%;">
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </section>
-<!-- Testimonials section-->
 <section class="py-5 border-bottom">
     <div class="container px-5 my-5 px-5">
         <div class="text-center mb-5">
             <h2 class="fw-bolder">Check out our picks for the best shoes of 2021</h2>
         </div>
         <div class="row gx-5 justify-content-center">
-            <div class="col-lg-6">
+            <div class="col-12">
                 <div class="card-body">
-                    <div clss="d-flex">
+                    <div clss="d-flex ustify-content-center">
                         <iframe width="800" height="450" src="https://www.youtube.com/embed/uzA86QrBnqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                {% comment %} <!-- Testimonial 1-->
-                <div class="card mb-4">
-                    <div class="card-body p-4">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
-                            <div class="ms-4">
-                                <p class="mb-1">Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!</p>
-                                <div class="small text-muted">- Client Name, Location</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 2-->
-                <div class="card">
-                    <div class="card-body p-4">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
-                            <div class="ms-4">
-                                <p class="mb-1">The whole team was a huge help with putting things together for our company and brand. We will be hiring them again in the near future for additional work!</p>
-                                <div class="small text-muted">- Client Name, Location</div>
-                            </div>
-                        </div>
-                    </div>
-                </div> {% endcomment %}
             </div>
         </div>
     </div>
 </section>
-<!-- Brands section-->
 <section class="bg-light py-5 brands">
     <div class="container brands-wrapper px-5 my-5 px-5">
         <h2 class="brands-header">Brands</h2>
