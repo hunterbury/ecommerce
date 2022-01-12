@@ -29,25 +29,29 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">MEN'S</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">BRANDS:</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=ADIDAS&type=">adidas</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=ASICS&type=">ASICS</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=BROOKS&type=">Brooks</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=HOKA&type=">Hoka</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=NEW_BALANCE&type=">New Balance</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=NIKE&type=">Nike</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=SAUCONY&type=">Saucony</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}">View all brands</a></li>
-                            </ul>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">TYPES:</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=&type=EVERYDAY">Everyday</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=&type=LIGHTWEIGHT">Lightweight</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=&type=RACING">Racing</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}?brand=&type=TRAIL">Trail</a></li>
-                                <li><a class="dropdown-item" href="{% url 'store' %}">View all types</a></li>
+                                <div class="row">
+                                    <div class="column">
+                                        <li><a class="dropdown-item" href="#!">BRANDS:</a></li>
+                                        <li><hr class="dropdown-divider" /></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=ADIDAS&type=">adidas</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=ASICS&type=">ASICS</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=BROOKS&type=">Brooks</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=HOKA&type=">Hoka</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=NEW_BALANCE&type=">New Balance</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=NIKE&type=">Nike</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=SAUCONY&type=">Saucony</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}">View all brands</a></li>
+                                    </div>
+                                    <div class="column">
+                                        <li><a class="dropdown-item" href="#!">TYPES:</a></li>
+                                        <li><hr class="dropdown-divider" /></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=&type=EVERYDAY">Everyday</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=&type=LIGHTWEIGHT">Lightweight</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=&type=RACING">Racing</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}?brand=&type=TRAIL">Trail</a></li>
+                                        <li><a class="dropdown-item" href="{% url 'store' %}">View all types</a></li>
+                                    </div>
+                                </div>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

@@ -165,10 +165,15 @@ nav {
   background-color: #3e8e41;
 }
 
-.carousel {
-  margin-top: 15px;
-  margin-left: 100px;
+.input-group {
+  margin-left: 140px;
   margin-right: 100px;
+}
+
+.carousel {
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .carousel-item {
@@ -185,6 +190,7 @@ nav {
 .carousel-item img {
   width: 800px;
   height: 500px;
+  border-radius: 1%;
 }
 
 .categories {
@@ -254,10 +260,6 @@ nav {
   -ms-grid-column-align: start;
       justify-self: start;
   margin-top: 20px;
-}
-
-.row {
-  margin: 0;
 }
 
 .gallery {
@@ -330,17 +332,6 @@ nav {
           align-items: center;
 }
 
-.column {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (0.5fr)[2];
-      grid-template-columns: repeat(2, 0.5fr);
-  -ms-grid-rows: (0.5fr)[2];
-      grid-template-rows: repeat(2, 0.5fr);
-  width: 600px;
-  padding: 10px;
-}
-
 .detail-gallery {
   display: -ms-grid;
   display: grid;
@@ -392,12 +383,6 @@ nav {
   display: grid;
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .pd-wrap {
