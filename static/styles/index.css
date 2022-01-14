@@ -3,6 +3,15 @@
   padding: 0;
 }
 
+.gradient-custom {
+  background: #ECE9E6;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#FFFFFF), to(#ECE9E6));
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 body {
   background: #fff;
   overflow-x: hidden;
@@ -125,6 +134,13 @@ nav {
   border: none;
 }
 
+.nav-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1rem)[2];
+      grid-template-columns: repeat(2, 1rem);
+}
+
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
@@ -172,8 +188,8 @@ nav {
 
 .carousel {
   padding-top: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .carousel-item {
@@ -188,8 +204,8 @@ nav {
 }
 
 .carousel-item img {
-  width: 800px;
-  height: 500px;
+  width: 700px;
+  height: 700px;
   border-radius: 1%;
 }
 

@@ -17,7 +17,11 @@ def home(request):
     products = filter.qs
 
     context = {'products':products, 'cartItems':cartItems, 'filter': filter}
-    return render(request, 'store/home.html', context)
+
+    if request.user.is_authenticated:
+        return render(request, 'store/home.html', context)
+    else:
+        return redirect('/login/')
 
 def store(request):
     data = cartData(request)
