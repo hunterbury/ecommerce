@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -176,8 +178,12 @@ nav {
 	margin-right: 100px;
 }
 
+header {
+	font-family: 'Sora', sans-serif;
+}
+
 .carousel {
-	padding-top: 0px;
+	padding-top: 20px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -195,7 +201,7 @@ nav {
 
 .carousel-item img {
 	width: 700px;
-	height: 700px;
+	height: 750px;
 	border-radius: 1%;
 }
 
@@ -219,26 +225,22 @@ nav {
 }
 
 .brands {
-    max-width: 68.75rem;
-    margin: auto;
     text-align: center;
-    margin-top: 2.5rem;
+	padding-bottom: 20px;
 }
   
 .brands-header {
-    margin-bottom: 1rem;
+	padding-bottom: 10px;
 }
   
-.brands-wrapper img {
+.brands-wrapper a {
     padding: 1.25rem;
 }
 
 .icon-card {
-    background-color: #fff;
     border-radius: 11px;
-    box-shadow: 0 3px 10px var(--secondary-shadow);
+    box-shadow: 0 3px 10px;
     padding: 20px;
-    margin: 10px;
 }
 
 .icon {

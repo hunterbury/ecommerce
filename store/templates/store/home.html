@@ -2,14 +2,14 @@
 {% load static %}
 {% block content %}
 {% if user.is_authenticated %}
-<header class="py-5 mb-0">
+ <header class="py-3 mb-0">
     <div class="container px-4 px-lg-5">
         <div class="text-center ">
             <h1 class="display-4 fw-bolder">ShoeShop</h1>
             <p class="lead fw-normal mb-0">Shop the best running shoe collection available</p>
         </div>
     </div>
-</header>
+</header> 
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -56,7 +56,7 @@
 </section>
 <section class="py-5 border-bottom">
     <div class="container px-5 my-5 px-5">
-        <div class="text-center mb-5">
+        <div class="text-center mb-2">
             <h2 class="fw-bolder">Check out our picks for the best shoes of 2021</h2>
         </div>
         <div class="row gx-5 justify-content-center">
@@ -70,16 +70,16 @@
         </div>
     </div>
 </section>
-<section class="bg-light py-5 brands">
-    <div class="container brands-wrapper px-5 my-5 px-5">
+<section class="bg-light brands">
+    <div class="container brands-wrapper ">
         <h2 class="brands-header">Brands</h2>
         <div class="first-set animate__animated animate__pulse">
-                <img
+                <a href="{% url 'store' %}?brand=HOKA&type="><img
                     src="https://logodix.com/logo/821345.jpg"
                     alt=""
                     loading="lazy"
                     class="icon icon-card"
-                />
+                /></a>
                 <img
                     src="https://logodix.com/logo/1290235.png"
                     alt=""
