@@ -8,6 +8,8 @@ from .utils import cookieCart, cartData, guestOrder
 from .filters import ProductFilter
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import AuthenticationForm
 
 def home(request):
     data = cartData(request)
@@ -22,6 +24,18 @@ def home(request):
         return render(request, 'store/home.html', context)
     else:
         return redirect('/login/')
+
+def loginView(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})
 
 def store(request):
     data = cartData(request)

@@ -20,6 +20,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: #4d4d4d;
+  font-family: 'Sora', sans-serif;
 }
 
 nav {
@@ -210,7 +211,7 @@ header {
 
 .carousel-item img {
   width: 700px;
-  height: 750px;
+  height: 730px;
   border-radius: 1%;
 }
 
