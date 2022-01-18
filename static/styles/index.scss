@@ -25,9 +25,10 @@ h1,h2,h3,h4,h5,h6{
 	font-family: 'Sora', sans-serif;
 }
 
-nav {
-	display: flex;
-	
+.dropdown {
+	ul {
+		min-width: 250px;
+	 }
 }
 
 .submit-btn {
@@ -84,6 +85,7 @@ nav {
 
 .row-image{
 	width: 100px;
+	padding-left: 10px;
 }
 
 .form-field{
@@ -136,43 +138,62 @@ nav {
 	border: none;
 }
 
-.nav-row {
-	display: grid;
-	grid-template-columns: repeat(2, 1rem);
+.d-flex {
+	padding-right: 10px;
 }
-  
-  /* The container <div> - needed to position the dropdown content */
-.dropdown {
-	position: relative;
-	display: inline-block;
+
+
+nav {
+	.container {
+		width: 1000px;
+	}
+
+	.user {
+		display: inline-flex;
+		margin-right: 0;
+		a {
+			color: #000;
+		}
+	}
 }
+
+//   /* The container <div> - needed to position the dropdown content */
+// .dropdown {
+// 	position: relative;
+// 	display: inline-block;
+// }
   
-  /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f1f1f1;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
+//   /* Dropdown Content (Hidden by Default) */
+// .dropdown-content {
+// 	display: none;
+// 	position: absolute;
+// 	background-color: #f1f1f1;
+// 	min-width: 160px;
+// 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+// 	z-index: 1;
+// }
+  
+//   /* Links inside the dropdown */
+// .dropdown-content a {
+// 	color: black;
+// 	padding: 12px 16px;
+// 	text-decoration: none;
+// 	display: block;
+// }
+  
+//   /* Change color of dropdown links on hover */
+// .dropdown-content a:hover {background-color: #ddd;}
+  
+//   /* Show the dropdown menu on hover */
+// .dropdown:hover .dropdown-content {display: block;}
+  
+//   /* Change the background color of the dropdown button when the dropdown content is shown */
+// .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.login-btn {
+	padding: 32px;
+	width: 250px;
 }
-  
-  /* Links inside the dropdown */
-.dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-}
-  
-  /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 .input-group {
 	margin-left: 140px;
@@ -184,7 +205,6 @@ header {
 }
 
 .carousel {
-	padding-top: 20px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -202,7 +222,7 @@ header {
 
 .carousel-item img {
 	width: 700px;
-	height: 730px;
+	height: 670px;
 	border-radius: 1%;
 }
 
@@ -231,22 +251,38 @@ header {
 }
   
 .brands-header {
-	padding-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
   
-.brands-wrapper a {
-    padding: 1.25rem;
+.container-fluid {
+	.icon-card {
+		border-radius: 11px;
+		box-shadow: 0 3px 10px;
+		margin: 10px;
+	}
+
+	.icon {
+		width: 80%;
+		height: 80%;
+	}
+	
 }
 
-.icon-card {
-    border-radius: 11px;
-    box-shadow: 0 3px 10px;
-    padding: 20px;
-}
+.types {
+	padding-left: 50px;
 
-.icon {
-    width: 11.875rem;
-    height: 11.25rem;
+	.col {
+		padding: 20px;
+	}
+
+	img {
+		height: 25rem;
+	}
+
+	a {
+		text-decoration: none;
+	}
 }
 
 .gallery-container {

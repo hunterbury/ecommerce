@@ -30,25 +30,25 @@
 <section class="bg-light py-5 border-bottom">
     <div class="container px-5 my-5">
         <div class="text-center mb-5">
-            <h2 class="fw-bolder">New 2022 Releases</h2>
+            <h2 class="fw-bolder">NEW 2022 RELEASES</h2>
         </div>
         <div class="row gx-5 justify-content-center">
-            <div class="deal col-4">
-                <h5>adidas Ultraboost 21</h5>
+            <div class="deal col-4 mb-4">
+                <h5>ADIDAS ULTRABOOST 21</h5>
                 <a href="{% url 'product-info' pk=6 %}"><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/h22732-ub21-innovation-ss21-hero-outfit-one-female-pre-run-fy0401-246-688585-1610641223.jpg" style="width: 20em; height: 20em; border-radius: 2%;"></a>
             </div>
-            <div class="deal col-4">
-                <h5>Hoka Rincon 3</h5>
+            <div class="deal col-4 mb-4">
+                <h5>HOKA RINCON 3</h5>
                 <a href="{% url 'product-info' pk=1 %}"><img src="https://www.believeintherun.com/wp-content/uploads/2021/07/hoka-one-one-rincon-3-lateral.jpg" style="width: 20em; height: 20em; border-radius: 2%;"></a>
             </div>    
-            <div class="deal col-4">
-                <h5>Nike Vaporfly NEXT% 2</h5>
+            <div class="deal col-4 mb-4">
+                <h5>NIKE VAPORFLY NEXT% 2</h5>
                 <a href="{% url 'product-info' pk=14 %}"><img src="https://sneakernews.com/wp-content/uploads/2021/05/Nike-ZoomX-Vaporfly-NEXT-2-CU4111-700-6.jpg" style="width: 20em; height: 20em; border-radius: 2%;"></a>
             </div>
         </div>
         <div class="row gx-5 justify-content-center">
             <div class="deal col-12">
-                <h5>Hoka Mach 4</h5>
+                <h5>HOKA MACH 4</h5>
                 <a href="{% url 'product-info' pk=32 %}"><img src="https://www.roadrunnersports.com/blog/wp-content/uploads/2021/04/HOKA-ONE-ONE-Mach-4-Review.jpeg" style="width: 65em; height: 30em; border-radius: 2%;"></a>
             </div>
         </div>
@@ -57,7 +57,7 @@
 <section class="py-5 border-bottom">
     <div class="container px-5 my-5 px-5">
         <div class="text-center mb-2">
-            <h2 class="fw-bolder">Check out our picks for the best shoes of 2021</h2>
+            <h2 class="fw-bolder">CHECK OUT OUR PICKS FOR THE BEST SHOES OF 2021</h2>
         </div>
         <div class="row gx-5 justify-content-center">
             <div class="col-12">
@@ -70,36 +70,103 @@
         </div>
     </div>
 </section>
-<section class="bg-light brands">
-    <div class="container brands-wrapper ">
-        <h2 class="brands-header">Brands</h2>
-        <div class="first-set animate__animated animate__pulse">
+
+<section class="bg-light py-5 border-bottom types">
+    <h2 class="fw-bolder text-center mb-4">SHOP SHOES FOR EVERY RUN</h2>
+    <div class="row">
+        <div class="col">
+            {% comment %} <h5 class="text-center">RACING</h5> {% endcomment %}
+            <a href="{% url 'store' %}?brand=&type=RACING"><div class="card" style="width: 25rem;">
+                <img src="https://static01.nyt.com/images/2021/11/06/sports/06marathon-photos-p5-1/merlin_163791969_3b7f7b3e-7a75-4afc-a494-f210cb8e1824-articleLarge.jpg?quality=75&auto=webp&disable=upscale" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Saucony Endorphin Pro 2, Hoka Rocket x, Asics Hyper Speed, and more available now</p>
+                </div>
+            </div></a>           
+        </div>
+        <div class="col">
+            <a href="{% url 'store' %}?brand=&type=TRAIL"><div class="card" style="width: 25rem;">
+                <img src="https://cdn.mos.cms.futurecdn.net/5kDigLFubmesCCxVXgXy97.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Brooks Catamount, Hoka Speedgoat 4, Nike Pegasus Trail 3, and more available now</p>
+                </div>
+            </div></a>          
+        </div>
+        <div class="col">
+            <a href="{% url 'store' %}?brand=&type=EVERYDAY"><div class="card" style="width: 25rem;">
+                <img src="https://www.irishtimes.com/polopoly_fs/1.4356351.1600264704!/image/image.jpg_gen/derivatives/box_620_330/image.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Hoka Clifton 8, Brooks Ghost 14, adidas Ultraboost 21, and more available now</p>
+                </div>
+            </div></a>           
+        </div>
+    </div>
+</section>
+
+<section class="brands">
+    <div class="container-fluid">
+        <div class="row">
+            <h2 class="col-12 brands-header fw-bolder">BRANDS</h2>
+        </div>
+        <div class="row">
+            <div class="col">
                 <a href="{% url 'store' %}?brand=HOKA&type="><img
-                    src="https://logodix.com/logo/821345.jpg"
+                    src="https://logodix.com/logo/822114.png"
                     alt=""
                     loading="lazy"
-                    class="icon icon-card"
+                    class="icon"
+                    style="width: 100%; height: 100%;"
                 /></a>
-                <img
+            </div>
+            <div class="col">
+                    <a href="{% url 'store' %}?brand=SAUCONY&type="><img
                     src="https://logodix.com/logo/1290235.png"
                     alt=""
                     loading="lazy"
-                    class="icon icon-card"
-                />
-            <img
-                src="https://logodix.com/logo/1647.png"
-                alt=""
-                loading="lazy"
-                class="icon icon-card"
-            />
-            <img
-                src="https://logodix.com/logo/6054.png"
-                alt=""
-                loading="lazy"
-                class="icon icon-card"
-            />
+                    class="icon"
+                    style="width: 100%; height: 100%;"
+                    /></a>
+            </div>
+            <div class="col">
+                <a href="{% url 'store' %}?brand=NIKE&type="><img
+                    src="https://logodix.com/logo/1647.png"
+                    alt=""
+                    loading="lazy"
+                    class="icon"
+                /></a>
+            </div>
+            <div class="col">
+                <a href="{% url 'store' %}?brand=ADIDAS&type="><img
+                    src="https://logodix.com/logo/6054.png"
+                    alt=""
+                    loading="lazy"
+                    class="icon"
+                /></a>
+            </div>
+            <div class="col">
+                <a href="{% url 'store' %}?brand=NEWBALANCE&type="><img
+                    src="https://logodix.com/logo/80634.jpg"
+                    alt=""
+                    loading="lazy"
+                    class="icon"
+                /></a>
+            </div>
+            <div class="col">
+                <a href="{% url 'store' %}?brand=ASICSS&type="><img
+                    src="https://logodix.com/logo/770540.png"
+                    alt=""
+                    loading="lazy"
+                    class="icon"
+                /></a>
+            </div>
+            <div class="col">
+                <a href="{% url 'store' %}?brand=BROOKS&type="><img
+                    src="https://logodix.com/logo/1697208.png"
+                    alt=""
+                    loading="lazy"
+                    class="icon"
+                /></a>
+            </div>
         </div>
-      
     </div>
 </section>
 <!-- Footer-->

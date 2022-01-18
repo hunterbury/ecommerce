@@ -37,6 +37,14 @@ def loginView(request):
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
 
+def demoLogin(request):
+    if request.method == 'POST':
+        username = 'demo_user'
+        password = 'demo_password'
+        user = authenticate(request, username=username, password=password)
+        login(request, user)
+        return redirect('/')
+
 def store(request):
     data = cartData(request)
     cartItems = data['cartItems']
