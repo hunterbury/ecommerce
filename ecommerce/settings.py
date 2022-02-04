@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'binary_database_files',
 
     'store.apps.StoreConfig',
     'crispy_forms',
@@ -142,3 +143,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login'
+
+DEFAULT_FILE_STORAGE = 'binary_database_files.storage.DatabaseStorage'
