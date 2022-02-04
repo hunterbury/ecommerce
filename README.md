@@ -16,6 +16,7 @@ ShoeShop is a Django website with JavaScript, Sass, and Bootstrap on the front-e
 - JavaScript cart functionality
 - Django models, forms, and filters
 - PayPal integration
+- Pagination
 
 
 
