@@ -360,7 +360,6 @@ header {
   transition: .1s transform;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  /* hack */
 }
 
 .detail-gallery > div:hover {
