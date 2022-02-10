@@ -22,10 +22,10 @@ ShoeShop is a a full-stack web app that allows users to view and purchase shoes.
 
 ## Screenshots
 
-![App Screenshot](ecommerce/static/images/shoeshop-login.png)
-![App Screenshot](ecommerce/static/images/shoeshop.png)
-![App Screenshot](ecommerce/static/images/shoeshop-cart.png)
-![App Screenshot](ecommerce/static/images/shoeshop-checkout.png)
+![App Screenshot](static/images/shoeshop-login.png)
+![App Screenshot](static/images/shoeshop.png)
+![App Screenshot](static/images/shoeshop-cart.png)
+![App Screenshot](static/images/shoeshop-checkout.png)
 
 
 
