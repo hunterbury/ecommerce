@@ -2,7 +2,7 @@
 # ShoeShop E-commerce Site
 
 
-ShoeShop is a Django website with JavaScript, Sass, and Bootstrap on the front-end. 
+ShoeShop is a a full-stack web app that allows users to view and purchase shoes. I designed the front-end with Sass and Bootstrap, and implemented cart functionality with JavaScript. The back-end was built with Django models, filters, and forms, and utilizes PayPal integration. 
 ## Tech Stack
 
 **Client:** HTML, JavaScript, Sass, Bootstrap
@@ -22,10 +22,13 @@ ShoeShop is a Django website with JavaScript, Sass, and Bootstrap on the front-e
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](ecommerce/static/images/shoeshop-login.png)
+![App Screenshot](ecommerce/static/images/shoeshop.png)
+![App Screenshot](ecommerce/static/images/shoeshop-cart.png)
+![App Screenshot](ecommerce/static/images/shoeshop-checkout.png)
+
 
 
 ## Demo
 
-Insert gif or link to demo
-
+https://hunterbury-ecommerce.herokuapp.com/
