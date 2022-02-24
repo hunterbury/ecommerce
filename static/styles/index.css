@@ -164,6 +164,13 @@ nav .user a {
   margin-right: 100px;
 }
 
+@media (max-width: 1000px) {
+  .input-group {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
 header {
   font-family: 'Sora', sans-serif;
 }
@@ -232,6 +239,12 @@ header {
 .container-fluid .icon {
   width: 80%;
   height: 80%;
+}
+
+@media (max-width: 600px) {
+  .deals .container .deal img {
+    width: 100%;
+  }
 }
 
 .types {
