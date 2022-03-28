@@ -25,25 +25,25 @@ def home(request):
     else:
         return redirect('/login/')
 
-def loginView(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('/')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'registration/login.html', {'form': form})
+# def loginView(request):
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         password = request.POST['password']
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             login(request, user)
+#             return redirect('/')
+#     else:
+#         form = AuthenticationForm()
+#     return render(request, 'registration/login.html', {'form': form})
 
-def demoLogin(request):
-    if request.method == 'POST':
-        username = 'demo_user'
-        password = 'demo_password'
-        user = authenticate(request, username=username, password=password)
-        login(request, user)
-        return redirect('/')
+# def demoLogin(request):
+#     if request.method == 'POST':
+#         username = 'demo_user'
+#         password = 'demo_password'
+#         user = authenticate(request, username=username, password=password)
+#         login(request, user)
+#         return redirect('/')
 
 def store(request):
     data = cartData(request)
