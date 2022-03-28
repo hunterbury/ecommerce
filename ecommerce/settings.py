@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ds6j*_(aon)5mq#xpo%2c^%t%^w8tu2etpr+=y2)@ruqnb2v(@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hunterbury-ecommerce.herokuapp.com','ecommerce-env.eba-uz3cgjqs.us-east-1.elasticbeanstalk.com', '127.0.0.1']
+ALLOWED_HOSTS = ['hunterbury-ecommerce.herokuapp.com','grassisgreener-env-1.eba-xy4apyn3.us-east-1.elasticbeanstalk.com', '127.0.0.1']
 
 
 # Application definition
